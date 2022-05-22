@@ -55,6 +55,7 @@ ingress:
     - host: strapi-test.cluster.smartpoke.es
       paths:
         - path: /
+        - path: /strapi
   tls:
     - hosts:
         - strapi-test.cluster.smartpoke.es
