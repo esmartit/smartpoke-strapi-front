@@ -19,6 +19,8 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 # Copy static assets from builder stage
 COPY --from=builder /app/build .
-COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/nginx/upstream.conf /etc/nginx/conf.d/upstream.conf
+#COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/nginx/strapi.conf /etc/nginx/sites-available/strapi.conf
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
