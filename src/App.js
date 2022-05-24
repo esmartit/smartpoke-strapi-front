@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import socketIOClient from "socket.io-client";
 
 function App() {
+  const [response, setResponse] = useState("");
+
+  useEffect(() => {
+    const socket = socketIOClient("/", {path: '/smartpoke/socket.io'});
+    socket.on("smartpoke-device-presence", data => {
+      setResponse(data);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <p>
+      It's <time dateTime={response}>{response}</time>
+    </p>
   );
 }
 
