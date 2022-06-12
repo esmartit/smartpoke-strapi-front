@@ -13,7 +13,7 @@ ConfigureFakeBackend();
 const App = lazy(
   () =>
     new Promise((resolve) => {
-      setTimeout(() => resolve(import("./app")), 0);
+      setTimeout(() => resolve(import("./App")), 0);
     })
 );
 
