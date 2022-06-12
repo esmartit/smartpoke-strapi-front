@@ -8,7 +8,6 @@ import { PrivateRoute } from "./routes/PrivateRoutes";
 import BlankLayout from "./layouts/BlankLayout";
 
 const App = () => {
-  //const [currentUser, SetcurrentUser] = useState(null);
   return (
     <Provider store={configureStore()}>
       <Router history={History}>
