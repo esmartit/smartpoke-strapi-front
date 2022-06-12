@@ -4,6 +4,9 @@
 
 # Name the node stage "builder"
 FROM node:alpine AS builder
+
+RUN apk add --no-cache python3 py3-pip g++ make
+
 # Set working directory
 WORKDIR /app
 # Copy all files from current directory to working dir in image
