@@ -1,21 +1,31 @@
-import React, { useState, useEffect } from "react";
-import socketIOClient from "socket.io-client";
+import React from "react";
+import indexRoutes from "./routes/";
+import { Router, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import { configureStore } from "./redux/Store";
+import { History } from "./jwt/_helpers";
+import { PrivateRoute } from "./routes/PrivateRoutes";
+import BlankLayout from "./layouts/BlankLayout";
 
-function App() {
-  const [response, setResponse] = useState("");
-
-  useEffect(() => {
-    const socket = socketIOClient("/", {path: '/smartpoke/socket.io'});
-    socket.on("smartpoke-device-presence", data => {
-      setResponse(data);
-    });
-  }, []);
-
+const App = () => {
+  //const [currentUser, SetcurrentUser] = useState(null);
   return (
-    <p>
-      It's <time dateTime={response}>{response}</time>
-    </p>
+    <Provider store={configureStore()}>
+      <Router history={History}>
+        <Switch>
+          <Route exact path="/authentication/Login" component={BlankLayout} />;
+          {indexRoutes.map((prop, key) => {
+            return (
+              <PrivateRoute
+                path={prop.path}
+                key={key}
+                component={prop.component}
+              />
+            );
+          })}
+        </Switch>
+      </Router>
+    </Provider>
   );
-}
-
+};
 export default App;
