@@ -1,9 +1,9 @@
 {
-  "name": "adminpro",
-  "version": "1.0.0",
+  "name": "smartpoke-strapi-front",
+  "version": "0.1.0",
   "homepage": "/",
   "private": true,
-  "description": "adminpro react admin comes with the beautiful Ui with easy to use code",
+  "description": "SmartPoke Platform del bigdata y location analytics a los procesos customer engagement",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
