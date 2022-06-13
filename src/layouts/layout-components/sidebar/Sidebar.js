@@ -5,7 +5,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import { useSelector } from "react-redux";
 import FeatherIcon from "feather-icons-react";
 
-import profile from "../../../assets/images/users/esmartit.jpg";
+import profile from "../../../assets/images/users/5.jpg";
 
 const Sidebar = (props) => {
   const activeRoute = (routeName) => {
@@ -72,7 +72,7 @@ const Sidebar = (props) => {
                 aria-expanded="false"
               >
                 <img src={profile} alt="user" />
-                <span className="hide-menu">SmartPoke User </span>
+                <span className="hide-menu">Steave Jobs </span>
               </span>
               <Collapse isOpen={state.collapse}>
                 <ul>

@@ -12,12 +12,16 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  UncontrolledCarousel,
   Progress,
+  ListGroup,
+  ListGroupItem,
   Row,
   Col,
+  Form,
+  FormGroup,
+  Input,
 } from "reactstrap";
-// import { LinkContainer } from 'react-router-bootstrap';
-import { Link } from "react-router-dom";
 import * as data from "./Data";
 
 /*--------------------------------------------------------------------------------*/
@@ -27,7 +31,7 @@ import logodarkicon from "../../../assets/images/logo-icon.png";
 import logolighticon from "../../../assets/images/logo-light-icon.png";
 import logodarktext from "../../../assets/images/logo-text.png";
 import logolighttext from "../../../assets/images/logo-light-text.png";
-import profilephoto from "../../../assets/images/users/esmartit.jpg";
+import profilephoto from "../../../assets/images/users/5.jpg";
 
 export default () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -135,89 +139,6 @@ export default () => {
                 <i className="ti-menu" />
               </NavLink>
             </NavItem>
-            <NavItem>
-              <Link to="/_spanalytics/home" className="nav-link">
-                Home
-              </Link>
-            </NavItem>
-            <UncontrolledDropdown inNavbar nav>
-              <DropdownToggle caret nav>
-                Configurations
-              </DropdownToggle>
-              <DropdownMenu end="true">
-                <Link to="/_spconfigurations/spots" className="nav-link">
-                  <DropdownItem>Spots</DropdownItem>
-                </Link>
-                <Link to="/_spconfigurations/zones" className="nav-link">
-                  <DropdownItem>Zones</DropdownItem>
-                </Link>
-                <Link to="/_spconfigurations/sensors" className="nav-link">
-                  <DropdownItem>Sensors</DropdownItem>
-                </Link>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <UncontrolledDropdown inNavbar nav>
-              <DropdownToggle caret nav>
-                BigData Settings
-              </DropdownToggle>
-              <DropdownMenu end="true">
-                <Link to="/_spsettings/bigdata/values" className="nav-link">
-                  <DropdownItem>Values</DropdownItem>
-                </Link>
-                <Link to="/_spsettings/bigdata/devices" className="nav-link">
-                  <DropdownItem>Devices</DropdownItem>
-                </Link>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <UncontrolledDropdown inNavbar nav>
-              <DropdownToggle caret nav>
-                HotSpot Settings
-              </DropdownToggle>
-              <DropdownMenu end="true">
-                <Link to="/_spsettings/hotspot/nas" className="nav-link">
-                  <DropdownItem>Nas</DropdownItem>
-                </Link>
-                <Link to="/_spsettings/hotspot/hotspots" className="nav-link">
-                  <DropdownItem>HotSpots</DropdownItem>
-                </Link>
-                <Link to="/_spsettings/hotspot/limitations" className="nav-link">
-                  <DropdownItem>Limitations</DropdownItem>
-                </Link>
-                <DropdownItem divider />
-                <Link to="/_spsettings/hotspot/customers" className="nav-link">
-                  <DropdownItem>Customers</DropdownItem>
-                </Link>
-                <Link to="/_spsettings/hotspot/exportCustomers" className="nav-link">
-                  <DropdownItem>Export Customers</DropdownItem>
-                </Link>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <UncontrolledDropdown inNavbar nav>
-              <DropdownToggle caret nav>
-                Maintenances
-              </DropdownToggle>
-              <DropdownMenu end="true">
-                <Link to="/_spmaintenance/brands" className="nav-link">
-                  <DropdownItem>Brands</DropdownItem>
-                </Link>
-                <Link to="/_spmaintenance/businessTypes" className="nav-link">
-                  <DropdownItem>Business Types</DropdownItem>
-                </Link>
-                <DropdownItem divider />
-                <Link to="/_spmaintenance/locations/countries" className="nav-link">
-                  <DropdownItem>Countries</DropdownItem>
-                </Link>
-                <Link to="/_spmaintenance/locations/states" className="nav-link">
-                  <DropdownItem>States</DropdownItem>
-                </Link>
-                <Link to="/_spmaintenance/locations/cities" className="nav-link">
-                  <DropdownItem>Cities</DropdownItem>
-                </Link>
-                <Link to="/_spmaintenance/locations/zipCodes" className="nav-link">
-                  <DropdownItem>ZipCodes</DropdownItem>
-                </Link>
-              </DropdownMenu>
-            </UncontrolledDropdown>
           </Nav>
           <Nav className="ml-auto float-right" navbar>
             <NavItem>
@@ -339,6 +260,13 @@ export default () => {
               <DropdownMenu>
                 <Row>
                   {/*--------------------------------------------------------------------------------*/}
+                  {/* Carousel [Item-1]                                                              */}
+                  {/*--------------------------------------------------------------------------------*/}
+                  <Col xs="12" sm="12" md="12" lg="3">
+                    <h5 className="mb-3 text-uppercase">Carousel</h5>
+                    <UncontrolledCarousel items={data.items} />
+                  </Col>
+                  {/*--------------------------------------------------------------------------------*/}
                   {/* Progress [Item-2]                                                              */}
                   {/*--------------------------------------------------------------------------------*/}
                   <Col xs="12" sm="12" md="12" lg="3">
@@ -395,6 +323,87 @@ export default () => {
                       value={70}
                     />
                   </Col>
+                  {/*--------------------------------------------------------------------------------*/}
+                  {/* Contact Us [Item-3]                                                            */}
+                  {/*--------------------------------------------------------------------------------*/}
+                  <Col xs="12" sm="12" md="12" lg="3">
+                    <h5 className="mb-3 text-uppercase">Contact Us</h5>
+                    <Form>
+                      <FormGroup>
+                        <Input
+                          type="text"
+                          name="name"
+                          id="textname"
+                          placeholder="Enter Name Here"
+                        />
+                      </FormGroup>
+                      <FormGroup>
+                        <Input
+                          type="email"
+                          name="email"
+                          id="exampleEmail"
+                          placeholder="Enter Email Here"
+                        />
+                      </FormGroup>
+                      <FormGroup>
+                        <Input
+                          type="textarea"
+                          name="text"
+                          id="exampleText"
+                          placeholder="Message"
+                        />
+                      </FormGroup>
+                      <Button color="primary">Submit</Button>
+                    </Form>
+                  </Col>
+                  {/*--------------------------------------------------------------------------------*/}
+                  {/* List Style [Item-4]                                                            */}
+                  {/*--------------------------------------------------------------------------------*/}
+                  <Col xs="12" sm="12" md="12" lg="3">
+                    <h5 className="mb-3 text-uppercase">List Style</h5>
+                    <ListGroup flush>
+                      <ListGroupItem
+                        tag="a"
+                        href=""
+                        className="border-0 pl-0 text-dark pt-0"
+                      >
+                        <i className="fa fa-check text-success mr-2" />
+                        Cras justo odio
+                      </ListGroupItem>
+                      <ListGroupItem
+                        tag="a"
+                        href=""
+                        className="border-0 pl-0 text-dark pt-0"
+                      >
+                        <i className="fa fa-check text-success mr-2" />
+                        Dapibus ac facilisis in
+                      </ListGroupItem>
+                      <ListGroupItem
+                        tag="a"
+                        href=""
+                        className="border-0 pl-0 text-dark pt-0"
+                      >
+                        <i className="fa fa-check text-success mr-2" />
+                        Morbi leo risus
+                      </ListGroupItem>
+                      <ListGroupItem
+                        tag="a"
+                        href=""
+                        className="border-0 pl-0 text-dark pt-0"
+                      >
+                        <i className="fa fa-check text-success mr-2" />
+                        Porta ac consectetur ac
+                      </ListGroupItem>
+                      <ListGroupItem
+                        tag="a"
+                        href=""
+                        className="border-0 pl-0 text-dark pt-0"
+                      >
+                        <i className="fa fa-check text-success mr-2" />
+                        Vestibulum at eros
+                      </ListGroupItem>
+                    </ListGroup>
+                  </Col>
                 </Row>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -410,13 +419,13 @@ export default () => {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <i className="flag-icon flag-icon-es"></i> Spain
+                  <i className="flag-icon flag-icon-in"></i> India
                 </DropdownItem>
                 <DropdownItem>
                   <i className="flag-icon flag-icon-fr"></i> French
                 </DropdownItem>
                 <DropdownItem>
-                  <i className="flag-icon flag-icon-it"></i> Italy
+                  <i className="flag-icon flag-icon-cn"></i> China
                 </DropdownItem>
                 <DropdownItem>
                   <i className="flag-icon flag-icon-de"></i> Dutch
@@ -449,8 +458,8 @@ export default () => {
                     />
                   </div>
                   <div className="ml-2">
-                    <h4 className="mb-0 text-white">SmartPoke User</h4>
-                    <p className=" mb-0">info@esmartit.es</p>
+                    <h4 className="mb-0 text-white">Steave Jobs</h4>
+                    <p className=" mb-0">varun@gmail.com</p>
                   </div>
                 </div>
                 <DropdownItem>

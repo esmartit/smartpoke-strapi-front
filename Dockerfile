@@ -3,16 +3,17 @@
 # 2) nginx stage to serve frontend assets
 
 # Name the node stage "builder"
-FROM node:alpine AS builder
+FROM node:carbon AS builder
 
-RUN apk add --no-cache python3 py3-pip g++ make
+#RUN apk add --no-cache python3 py3-pip g++ make
 
 # Set working directory
 WORKDIR /app
 # Copy all files from current directory to working dir in image
 COPY . .
 # install node modules and build assets
-RUN yarn install && yarn build
+
+RUN npm install && npm run build
 
 # nginx state for serving content
 FROM nginx:alpine
