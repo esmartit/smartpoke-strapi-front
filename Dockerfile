@@ -1,30 +1,23 @@
-# Multi-stage
-# 1) Node image for building frontend assets
-# 2) nginx stage to serve frontend assets
+# get the base node image
+FROM node:carbon as builder
 
-# Name the node stage "builder"
-FROM node:carbon AS builder
+# set the working dir for container
+WORKDIR /frontend
 
-#RUN apk add --no-cache python3 py3-pip g++ make
+# copy the json file first
+COPY ./package.json /frontend
 
-# Set working directory
-WORKDIR /app
-# Copy all files from current directory to working dir in image
+# install npm dependencies
+RUN npm install
+
+# copy other project files
 COPY . .
-# install node modules and build assets
 
-RUN npm install && npm run build
+# build the folder
+RUN npm run build
 
-# nginx state for serving content
-FROM nginx:alpine
-# Set working directory to nginx asset directory
-WORKDIR /usr/share/nginx/html
-# Remove default nginx static assets
-RUN rm -rf ./*
-# Copy static assets from builder stage
-COPY --from=builder /app/build .
-#COPY --from=builder /app/nginx/upstream.conf /etc/nginx/conf.d/upstream.conf
-COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-#COPY --from=builder /app/nginx/strapi.conf /etc/nginx/sites-available/strapi.conf
-# Containers run nginx with global directives and daemon off
+# Handle Nginx
+FROM nginx
+COPY --from=builder /frontend/build /usr/share/nginx/html
+COPY --from=builder /frontend/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
