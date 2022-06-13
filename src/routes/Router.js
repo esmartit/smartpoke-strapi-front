@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import AuthRoutes from "./AuthRoutes";
 
 //Lazy loading and code splitting
 //Analytics
@@ -40,6 +41,8 @@ const Country = lazy(() => import("../views/_spmaintenance/locations/countries")
 const State = lazy(() => import("../views/_spmaintenance/locations/states"));
 const City = lazy(() => import("../views/_spmaintenance/locations/cities"));
 const zipCode = lazy(() => import("../views/_spmaintenance/locations/zipCodes"));
+
+const auths = [].concat(AuthRoutes);
 
 var ThemeRoutes = [
   {
@@ -313,6 +316,16 @@ var ThemeRoutes = [
       },
     ],
   },
+  {
+    path: "/authentication",
+    name: "AUTHENTICATION",
+    state: "openAuthentication",
+    icon: "alert-triangle",
+    badges: "side-badge badge badge-success",
+    badgeno: "7",
+    child: auths,
+    collapse: true,
+  },  
   {
     path: "/",
     pathTo: "/_spanalytics/home",
