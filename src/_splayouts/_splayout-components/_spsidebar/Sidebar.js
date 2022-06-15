@@ -5,7 +5,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import { useSelector } from "react-redux";
 import FeatherIcon from "feather-icons-react";
 
-import profile from "../../../assets/images/users/5.jpg";
+import profile from "../../../assets/images/users/esmartit.jpg";
 
 const Sidebar = (props) => {
   const activeRoute = (routeName) => {
@@ -15,7 +15,8 @@ const Sidebar = (props) => {
     authentication: activeRoute("/authentication") !== "" ? true : false,
     uicomponents: activeRoute("/ui-components") !== "" ? true : false,
     samplepages: activeRoute("/sample-pages") !== "" ? true : false,
-    dashboardpages: activeRoute("/dashboards") !== "" ? true : false,
+    homepage: activeRoute("/_spanalytics/home") !== "" ? true : false,
+    analyticpages: activeRoute("/_spanalytics") !== "" ? true : false,
     iconsPages: activeRoute("/icons") !== "" ? true : false,
     formlayoutPages: activeRoute("/form-layouts") !== "" ? true : false,
     formpickerPages: activeRoute("/form-pickers") !== "" ? true : false,

@@ -2,7 +2,7 @@ import { lazy } from "react";
 
 //Lazy loading and code splitting
 //Analytics
-const Home = lazy(() => import("../_sppages/_spanalytics/home"));
+const Home = lazy(() => import("../_sppages/home"));
 const OnSite = lazy(() => import("../_sppages/_spanalytics/onsite"));
 const BigData = lazy(() => import("../_sppages/_spanalytics/bigdata"));
 const Presence = lazy(() => import("../_sppages/_spanalytics/presence"));
@@ -43,9 +43,10 @@ const zipCode = lazy(() => import("../_sppages/_spmaintenance/_splocations/zipCo
 
 var ThemeRoutes = [
   {
-    path: "/_spanalytics/home",
+    path: "/home",
     name: "HOME",
     icon: "home",
+    state: "homepage",
     component: Home,
   },
   {
