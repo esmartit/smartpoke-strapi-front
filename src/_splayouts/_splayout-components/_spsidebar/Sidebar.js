@@ -12,17 +12,18 @@ const Sidebar = (props) => {
     return props.location.pathname.indexOf(routeName) > -1 ? "selected" : "";
   };
   const [state, setState] = useState({
-    authentication: activeRoute("/authentication") !== "" ? true : false,
-    uicomponents: activeRoute("/ui-components") !== "" ? true : false,
-    samplepages: activeRoute("/sample-pages") !== "" ? true : false,
     homepage: activeRoute("/_spanalytics/home") !== "" ? true : false,
     analyticpages: activeRoute("/_spanalytics") !== "" ? true : false,
-    iconsPages: activeRoute("/icons") !== "" ? true : false,
-    formlayoutPages: activeRoute("/form-layouts") !== "" ? true : false,
-    formpickerPages: activeRoute("/form-pickers") !== "" ? true : false,
+    marketingpages: activeRoute("/_spmarketing") !== "" ? true : false,
+    performancepages: activeRoute("/_spperformance") !== "" ? true : false,
+    configurationpages: activeRoute("/_spconfigurations") !== "" ? true : false,
+    settingpages: activeRoute("/_spsettings") !== "" ? true : false,
+    maintenancepages: activeRoute("/_spmaintenance") !== "" ? true : false,
   });
   const [cstate, csetState] = useState({
-    extrapages: activeRoute("/sample-pages/extra-pages") !== "" ? true : false,
+    bigdatapages: activeRoute("/_spsettings/_spbigdata") !== "" ? true : false,
+    hotspotpages: activeRoute("/_spsettings/_sphotspot") !== "" ? true : false,
+    locationpages: activeRoute("/_spmaintenance/_splocations") !== "" ? true : false,
   });
   const settings = useSelector((state) => state.settings);
 
@@ -73,7 +74,7 @@ const Sidebar = (props) => {
                 aria-expanded="false"
               >
                 <img src={profile} alt="user" />
-                <span className="hide-menu">Steave Jobs </span>
+                <span className="hide-menu">SmartPoke User </span>
               </span>
               <Collapse isOpen={state.collapse}>
                 <ul>
