@@ -316,7 +316,7 @@ var ThemeRoutes = [
   },
   {
     path: "/",
-    pathTo: "/_spanalytics/home",
+    pathTo: "/home",
     name: "HOME",
     redirect: true,
   },
