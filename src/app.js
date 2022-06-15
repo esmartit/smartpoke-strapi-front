@@ -1,11 +1,11 @@
 import React from "react";
-import indexRoutes from "./_sproutes/";
+import indexRoutes from "./routes/";
 import { Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "./redux/Store";
 import { History } from "./jwt/_helpers";
-import { PrivateRoute } from "./_sproutes/PrivateRoutes";
-import BlankLayout from "./_splayouts/BlankLayout";
+import { PrivateRoute } from "./routes/PrivateRoutes";
+import BlankLayout from "./layouts/BlankLayout";
 
 const App = () => {
   //const [currentUser, SetcurrentUser] = useState(null);
