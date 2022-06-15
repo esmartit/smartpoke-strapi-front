@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
-import Spinner from "./views/spinner/Spinner";
+import Spinner from "./_spviews/_spspinner/Spinner";
 import "./assets/scss/style.scss";
 import "./data";
 
