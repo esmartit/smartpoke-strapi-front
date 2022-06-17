@@ -18,7 +18,7 @@ import {
 } from "reactstrap";
 // import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from "react-router-dom";
-// import * as data from "../../../layouts/layout-components/header/Data";
+import * as data from "../../../layouts/layout-components/header/Data";
 
 /*--------------------------------------------------------------------------------*/
 /* Import images which are need for the HEADER                                    */
@@ -252,7 +252,7 @@ export default () => {
                 </div>
                 <div className="message-center notifications">
                   {/*<!-- Message -->*/}
-                  {/* {data.notifications.map((notification, index) => {
+                  {data.notifications.map((notification, index) => {
                     return (
                       <span href="" className="message-item" key={index}>
                         <span
@@ -271,7 +271,7 @@ export default () => {
                         </div>
                       </span>
                     );
-                  })} */}
+                  })}
                 </div>
                 <a className="nav-link text-center mb-1 text-dark" href=";">
                   <strong>Check all notifications</strong>{" "}
@@ -295,7 +295,7 @@ export default () => {
                 </div>
                 <div className="message-center message-body">
                   {/*<!-- Message -->*/}
-                  {/* {data.messages.map((message, index) => {
+                  {data.messages.map((message, index) => {
                     return (
                       <span href="" className="message-item" key={index}>
                         <span className="user-img">
@@ -318,7 +318,7 @@ export default () => {
                         </div>
                       </span>
                     );
-                  })} */}
+                  })}
                 </div>
                 <span className="nav-link text-center link text-dark" href="">
                   <b>See all e-Mails</b> <i className="fa fa-angle-right" />
@@ -457,9 +457,6 @@ export default () => {
                   <i className="ti-user mr-1 ml-1" /> My Account
                 </DropdownItem>
                 <DropdownItem>
-                  <i className="ti-wallet mr-1 ml-1" /> My Balance
-                </DropdownItem>
-                <DropdownItem>
                   <i className="ti-email mr-1 ml-1" /> Inbox
                 </DropdownItem>
                 <DropdownItem divider />
@@ -467,7 +464,7 @@ export default () => {
                   <i className="ti-settings mr-1 ml-1" /> Account Settings
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="/authentication/login">
+                <DropdownItem href="/_spauthentication/Login">
                   <i className="fa fa-power-off mr-1 ml-1" /> Logout
                 </DropdownItem>
                 <DropdownItem divider />

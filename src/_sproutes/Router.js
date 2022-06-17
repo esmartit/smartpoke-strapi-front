@@ -1,4 +1,6 @@
 import { lazy } from "react";
+import AuthRoutes from "./AuthRoutes";
+
 
 //Lazy loading and code splitting
 //Analytics
@@ -41,6 +43,8 @@ const State = lazy(() => import("../_sppages/_spmaintenance/_splocations/states"
 const City = lazy(() => import("../_sppages/_spmaintenance/_splocations/cities"));
 const zipCode = lazy(() => import("../_sppages/_spmaintenance/_splocations/zipCodes"));
 
+const auths = [].concat(AuthRoutes);
+
 var ThemeRoutes = [
   {
     path: "/home",
@@ -54,7 +58,7 @@ var ThemeRoutes = [
     path: "/_spanalytics",
     name: "ANALYTICS",
     state: "analyticpages",
-    icon: "grid",
+    icon: "activity",
     badges: "side-badge badge badge-info",
     badgeno: "4",
     child: [
@@ -62,28 +66,28 @@ var ThemeRoutes = [
         path: "/_spanalytics/onsite",
         name: "OnSite",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-voice",
         component: OnSite,
       },
       {
         path: "/_spanalytics/bigdata",
         name: "BigData",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-database",
         component: BigData,
       },
       {
         path: "/_spanalytics/presence",
         name: "FootFall",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-walk",
         component: Presence,
       },
       {
         path: "/_spanalytics/hotspot",
         name: "HotSpot",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-wifi",
         component: HotSpot,
       },
     ],
@@ -93,7 +97,7 @@ var ThemeRoutes = [
     path: "/_spmarketing",
     name: "MARKETING",
     state: "marketingpages",
-    icon: "calendar",
+    icon: "message-circle",
     badges: "side-badge badge badge-info",
     badgeno: "3",
     child: [
@@ -101,21 +105,21 @@ var ThemeRoutes = [
         path: "/_spmarketing/contentmanagement",
         name: "Content Management",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-responsive",
         component: ContentManagement,
       },
       {
         path: "/_spmarketing/campaigneditor",
         name: "Campaign Editor",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-message-text",
         component: CampaignEditor,
       },
       {
         path: "/_spmarketing/smartpoke",
         name: "SmartPoke",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-hand-pointing-right",
         component: SmartPoke,
       },
     ],
@@ -125,7 +129,7 @@ var ThemeRoutes = [
     path: "/_spperformance",
     name: "PERFORMANCE",
     state: "performancepages",
-    icon: "check-square",
+    icon: "target",
     badges: "side-badge badge badge-info",
     badgeno: "2",
     child: [
@@ -133,14 +137,14 @@ var ThemeRoutes = [
         path: "/_spperformance/campaigndetailed",
         name: "Campaign Detailed",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-format-indent-increase",
         component: CampaignDetailed,
       },
       {
         path: "/_spperformance/campaigneffectiveness",
         name: "Campaign Effectiveness",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-elevation-rise",
         component: CamapignEffectiveness,
       },
     ],
@@ -150,7 +154,7 @@ var ThemeRoutes = [
     path: "/_spconfigurations",
     name: "CONFIGURATIONS",
     state: "configurationpages",
-    icon: "map-pin",
+    icon: "layout",
     badges: "side-badge badge badge-info",
     badgeno: "3",
     child: [
@@ -158,21 +162,21 @@ var ThemeRoutes = [
         path: "/_spconfigurations/spots",
         name: "Spots",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-crosshairs-gps",
         component: Spot,
       },
       {
         path: "/_spconfigurations/zones",
         name: "Zones",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-hexagon-multiple",
         component: Zone,
       },
       {
         path: "/_spconfigurations/sensors",
         name: "Sensors",
         mini: "B",
-        icon: "mdi mdi-adjust",
+        icon: "mdi mdi-access-point",
         component: Sensor,
       },
     ],
@@ -190,20 +194,20 @@ var ThemeRoutes = [
         collapse: true,
         name: "BigData",
         cstate: "bigdatapages",
-        icon: "mdi mdi-file",
+        icon: "mdi mdi-settings-box",
         subchild: [
           {
             path: "/_spsettings/_spbigdata/values",
             name: "Values",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-checkbox-marked-circle",
             component: Value,
           },
           {
             path: "/_spsettings/_spbigdata/devices",
             name: "Devices",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-cellphone",
             component: Device,
           },
         ],
@@ -212,41 +216,41 @@ var ThemeRoutes = [
         collapse: true,
         name: "HotSpot",
         cstate: "hotspotpages",
-        icon: "mdi mdi-file",
+        icon: "mdi mdi-settings-box",
         subchild: [
           {
             path: "/_spsettings/_sphotspot/nas",
             name: "Nas",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-server",
             component: Nas,
           },
           {
             path: "/_spsettings/_sphotspot/hotspots",
             name: "HotSpots",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-rss-box",
             component: HotSpots,
           },
           {
             path: "/_spsettings/_sphotspot/limitations",
             name: "Limitations",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-ruler",
             component: Limitation,
           },
           {
             path: "/_spsettings/_sphotspot/customers",
             name: "Customers",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-account-location",
             component: Customer,
           },
           {
             path: "/_spsettings/_sphotspot/exportCustomers",
             name: "Export Customers",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-file-excel",
             component: exportCustomer,
           },
         ],
@@ -254,11 +258,21 @@ var ThemeRoutes = [
     ],
   },
   {
+    path: "/_spauthentication",
+    name: "Authentication",
+    state: "authentication",
+    icon: "user-check",
+    badges: "side-badge badge badge-success",
+    badgeno: "2",
+    child: auths,
+    collapse: true,
+  },
+  {
     collapse: true,
     path: "/_spmaintenance",
     name: "MAINTENANCES",
     state: "maintenancepages",
-    icon: "book-open",
+    icon: "tool",
     badges: "side-badge badge badge-success",
     badgeno: "3",
     child: [
@@ -273,41 +287,41 @@ var ThemeRoutes = [
         path: "/_spmaintenance/businessTypes",
         name: "Business Types",
 
-        icon: "mdi mdi-account-network",
+        icon: "mdi mdi-store",
         component: businessType,
       },
       {
         collapse: true,
         name: "Locations",
         cstate: "locationpages",
-        icon: "mdi mdi-file",
+        icon: "mdi mdi-map",
         subchild: [
           {
             path: "/_spmaintenance/_splocations/countries",
             name: "Countries",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-flag",
             component: Country,
           },
           {
             path: "/_spmaintenance/_splocations/states",
             name: "States",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-map-maker",
             component: State,
           },
           {
             path: "/_spmaintenance/_splocations/cities",
             name: "Cities",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-map-maker-circle",
             component: City,
           },
           {
             path: "/_spmaintenance/_splocations/zipCodes",
             name: "ZipCodes",
 
-            icon: "mdi mdi-star",
+            icon: "mdi mdi-mailbox",
             component: zipCode,
           },
         ],
