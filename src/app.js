@@ -13,7 +13,7 @@ const App = () => {
     <Provider store={configureStore()}>
       <Router history={History}>
         <Switch>
-          <Route exact path="/authentication/Login" component={BlankLayout} />;
+          <Route exact path="/_spauthentication/Login" component={BlankLayout} />;
           {indexRoutes.map((prop, key) => {
             return (
               <PrivateRoute

@@ -89,7 +89,7 @@ const Sidebar = (props) => {
                   </li>
                   <li>
                     <a
-                      href="/authentication/Login"
+                      href="/_spauthentication/Login"
                       className="sidebar-link p-0"
                     >
                       Logout

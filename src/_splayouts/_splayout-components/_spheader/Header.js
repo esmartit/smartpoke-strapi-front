@@ -464,7 +464,7 @@ export default () => {
                   <i className="ti-settings mr-1 ml-1" /> Account Settings
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="/authentication/Login">
+                <DropdownItem href="/_spauthentication/Login">
                   <i className="fa fa-power-off mr-1 ml-1" /> Logout
                 </DropdownItem>
                 <DropdownItem divider />

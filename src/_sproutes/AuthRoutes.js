@@ -1,9 +1,9 @@
 import {lazy } from "react"
-const Login = lazy(() => (import("../views/authentication/Login")));
-const Register = lazy(() => (import('../views/authentication/Register')));
+const Login = lazy(() => (import("../_sppages/_spauthentication/Login")));
+const Register = lazy(() => (import('../_sppages/_spauthentication/Register')));
 
 var AuthRoutes = [
-    { path: '/authentication/Login', name: 'Login', icon: 'mdi mdi-account-key', component: Login },
-    { path: '/authentication/Register', name: 'Register', icon: 'mdi mdi-account-plus', component: Register },
+    { path: '/_spauthentication/Login', name: 'Login', icon: 'mdi mdi-account-key', component: Login },
+    { path: '/_spauthentication/Register', name: 'Register', icon: 'mdi mdi-account-plus', component: Register },
 ];
 export default AuthRoutes; 

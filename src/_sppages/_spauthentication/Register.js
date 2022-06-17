@@ -49,7 +49,7 @@ const Register = () => {
                                     </Col>
                                 </Row>
                                 <div className="text-center">
-                                    Already have an account? <a href="/authentication/Login" className="text-info ml-1"><b>Sign In</b></a>
+                                    Already have an account? <a href="/_spauthentication/Login" className="text-info ml-1"><b>Sign In</b></a>
                                 </div>
                             </Form>
                         </Col>
