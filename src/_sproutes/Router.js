@@ -258,7 +258,7 @@ var ThemeRoutes = [
     ],
   },
   {
-    path: "/_spauthentication",
+    path: "/authentication",
     name: "Authentication",
     state: "authentication",
     icon: "user-check",

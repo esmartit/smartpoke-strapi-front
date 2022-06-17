@@ -18,7 +18,7 @@ const Sidebar = (props) => {
     performancepages: activeRoute("/_spperformance") !== "" ? true : false,
     configurationpages: activeRoute("/_spconfigurations") !== "" ? true : false,
     settingpages: activeRoute("/_spsettings") !== "" ? true : false,
-    authentication: activeRoute("/_spauthentication") !== "" ? true : false,
+    authentication: activeRoute("/authentication") !== "" ? true : false,
     maintenancepages: activeRoute("/_spmaintenance") !== "" ? true : false,
   });
   const [cstate, csetState] = useState({
@@ -70,14 +70,14 @@ const Sidebar = (props) => {
           <Nav id="sidebarnav">
             <li className="sidebar-item user-profile">
               <span
-                // onClick={toggle}
-                // className="sidebar-link has-arrow"
-                // aria-expanded="false"
+                onClick={toggle}
+                className="sidebar-link has-arrow"
+                aria-expanded="false"
               >
                 <img src={profile} alt="user" />
                 <span className="hide-menu">SmartPoke User </span>
               </span>
-              {/* <Collapse isOpen={state.collapse}>
+              <Collapse isOpen={state.collapse}>
                 <ul>
                   <li>
                     <a
@@ -88,25 +88,15 @@ const Sidebar = (props) => {
                     </a>
                   </li>
                   <li>
-                    <a href="/calendar" className="sidebar-link p-0">
-                      My Balance
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/email" className="sidebar-link p-0">
-                      Inbox
-                    </a>
-                  </li>
-                  <li>
                     <a
-                      href="/_spauthentication/Login"
+                      href="/authentication/login"
                       className="sidebar-link p-0"
                     >
                       Logout
                     </a>
                   </li>
                 </ul>
-              </Collapse> */}
+              </Collapse>
             </li>
             {props.routes.map((prop, key) => {
               if (prop.redirect) {
@@ -245,7 +235,7 @@ const Sidebar = (props) => {
                       activeClassName="active"
                     >
                       <FeatherIcon icon={prop.icon} />
-                      {/* <i className={prop.icon} /> */}
+                      <i className={prop.icon} />
                       <span className="hide-menu">{prop.name}</span>
                     </NavLink>
                   </li>
