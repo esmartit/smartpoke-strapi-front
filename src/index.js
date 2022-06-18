@@ -5,8 +5,8 @@ import "./assets/scss/style.scss";
 import "./data";
 
 // setup fake backend
-import { ConfigureFakeBackend } from "./jwt/_helpers";
-ConfigureFakeBackend();
+import { ConfigureBackend } from "./_spjwt/_sphelpers";
+ConfigureBackend();
 const App = lazy(
   () =>
     new Promise((resolve) => {

@@ -28,7 +28,7 @@ import "react-table/react-table.css";
 
 function LimitationTable() {
   const [data, setData] = useState([]);
-  const [limitationData, setLimitationData] = useState([]);
+  const [limitationList, setLimitationList] = useState([]);
 
   const [noTraffic, setNoTraffic] = useState(true);
   const [noPeriod, setNoPeriod] = useState(true);
@@ -68,7 +68,7 @@ function LimitationTable() {
     limitationService
       .getAll()
       .then((response) => {
-        setData(response.data._embedded.limitationEntities);
+        setLimitationList(response.data._embedded.limitationEntities);
       })
       .catch((error) => {
         setVisible(true);
@@ -206,7 +206,7 @@ function LimitationTable() {
     setModalDelete(!modalDelete);
   };
 
-  const dataLimitation = limitationData.map((limitation) => {
+  const Limitations = limitationList.map((limitation) => {
     return {
       name: limitation.name,
       maxUpload: limitation.maxUpload.value,
@@ -242,7 +242,7 @@ function LimitationTable() {
           {/* use this button to add a edit kind of action */}
           <Button
             onClick={() => {
-              let item = dataLimitation.find((o) => o.name === limitation.name);
+              let item = Limitations.find((o) => o.name === limitation.name);
               setModal(!modal);
               setData(item);
             }}
@@ -256,7 +256,7 @@ function LimitationTable() {
           {/* use this button to remove the data row */}
           <Button
             onClick={() => {
-              let item = dataLimitation.find((o) => o.name === limitation.name);
+              let item = Limitations.find((o) => o.name === limitation.name);
               setModalDelete(!modalDelete);
               setData(item);
             }}
@@ -621,7 +621,7 @@ function LimitationTable() {
             defaultPageSize={10}
             showPaginationBottom={true}
             className="-striped -highlight"
-            data={dataLimitation}
+            data={Limitations}
             filterable
           />
         </CardBody>

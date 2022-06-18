@@ -3,11 +3,11 @@ import http from "../../http-common";
 class endpointDataService {
 
   async getAll() {
-    return await http.get("/api/sensors/??populate[0]=zone&populate[1]=spot&populate[2]=spot.country&populate[3]=spot.state&populate[4]=spot.city&populate[5]=spot.zip_code&populate[6]=zone");
+    return await http.get("/api/sensors/?populate[0]=zone&populate[1]=spot&populate[2]=spot.country&populate[3]=spot.state&populate[4]=spot.city&populate[5]=spot.zip_code&populate[6]=zone");
   };
 
   async getOne(id) {
-    return await http.get(`/api/sensors/${id}??populate[0]=zone&populate[1]=spot&populate[2]=spot.country&populate[3]=spot.state&populate[4]=spot.city&populate[5]=spot.zip_code&populate[6]=zone`);
+    return await http.get(`/api/sensors/${id}?populate[0]=zone&populate[1]=spot&populate[2]=spot.country&populate[3]=spot.state&populate[4]=spot.city&populate[5]=spot.zip_code&populate[6]=zone`);
   };
 
   async count() {

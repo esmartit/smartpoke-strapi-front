@@ -136,7 +136,7 @@ export default () => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <Link to="/_spanalytics/home" className="nav-link">
+              <Link to="/home" className="nav-link">
                 Home
               </Link>
             </NavItem>

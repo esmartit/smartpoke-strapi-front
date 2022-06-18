@@ -14,7 +14,8 @@ import img1 from "../../assets/images/logo-icon.png";
 import img2 from "../../assets/images/background/login-register.jpg";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { AuthenticationService } from "../../jwt/_services";
+import { AuthenticationService } from "../../_spjwt/_spservices";
+
 const sidebarBackground = {
   backgroundImage: "url(" + img2 + ")",
   backgroundRepeat: "no-repeat",
@@ -46,37 +47,37 @@ const Login = (props) => {
               </span>
               <h5 className="font-medium mb-3">Sign In</h5>
               <div className="alert alert-success">
-                Username: test & Password: test
+                Enter your credentials
               </div>
             </div>
             <Row>
               <Col xs="12">
                 <Formik
                   initialValues={{
-                    username: "test",
-                    password: "test",
+                    username: "",
+                    password: "",
                   }}
                   validationSchema={Yup.object().shape({
                     username: Yup.string().required("Username is required"),
                     password: Yup.string().required("Password is required"),
                   })}
                   onSubmit={(
-                    { username, password },
-                    { setStatus, setSubmitting }
-                  ) => {
-                    setStatus();
-                    AuthenticationService.login(username, password).then(
-                      (user) => {
-                        const { from } = props.location.state || {
-                          from: { pathname: "/" },
-                        };
-                        props.history.push(from);
-                      },
-                      (error) => {
-                        setSubmitting(false);
-                        setStatus(error);
-                      }
-                    );
+                      { username, password },
+                      { setStatus, setSubmitting }
+                    ) => {
+                      setStatus();
+                      AuthenticationService.login(username, password).then(
+                        (user) => {
+                          const { from } = props.location.state || {
+                            from: { pathname: "/" },
+                          };
+                          props.history.push(from);
+                        },
+                        (error) => {
+                          setSubmitting(false);
+                          setStatus(error);
+                        }
+                      );
                   }}
                   render={({ errors, status, touched, isSubmitting }) => (
                     <Form className="mt-3" id="loginform">

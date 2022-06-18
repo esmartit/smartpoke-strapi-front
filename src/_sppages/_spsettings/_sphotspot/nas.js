@@ -25,7 +25,7 @@ import "react-table/react-table.css";
 
 function NasTable() {
   const [data, setData] = useState([]);
-  const [nasData, setNasData] = useState([]);
+  const [nasList, setNasList] = useState([]);
 
   const [alertMsg, setAlertMsg] = useState({
     color: "danger",
@@ -61,7 +61,7 @@ function NasTable() {
     nasService
       .getAll()
       .then((response) => {
-        setData(response.data._embedded.nas);
+        setNasList(response.data._embedded.nas);
       })
       .catch((error) => {
         setVisible(true);
@@ -177,7 +177,7 @@ function NasTable() {
     setModalDelete(!modalDelete);
   };
 
-  const dataNas = nasData.map((nas) => {
+  const Nases = nasList.map((nas) => {
     return {
       id: nas.id,
       name: nas.name,
@@ -194,7 +194,7 @@ function NasTable() {
           {/* use this button to add a edit kind of action */}
           <Button
             onClick={() => {
-              let item = dataNas.find((o) => o.id === nas.id);
+              let item = Nases.find((o) => o.id === nas.id);
               setModal(!modal);
               setData(item);
             }}
@@ -208,7 +208,7 @@ function NasTable() {
           {/* use this button to remove the data row */}
           <Button
             onClick={() => {
-              let item = dataNas.find((o) => o.id === nas.id);
+              let item = Nases.find((o) => o.id === nas.id);
               setModalDelete(!modalDelete);
               setData(item);
             }}
@@ -487,7 +487,7 @@ function NasTable() {
             defaultPageSize={10}
             showPaginationBottom={true}
             className="-striped -highlight"
-            data={dataNas}
+            data={Nases}
             filterable
           />
         </CardBody>

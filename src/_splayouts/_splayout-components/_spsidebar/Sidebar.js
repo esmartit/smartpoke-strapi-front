@@ -12,7 +12,7 @@ const Sidebar = (props) => {
     return props.location.pathname.indexOf(routeName) > -1 ? "selected" : "";
   };
   const [state, setState] = useState({
-    homepage: activeRoute("/_spanalytics/home") !== "" ? true : false,
+    homepage: activeRoute("/home") !== "" ? true : false,
     analyticpages: activeRoute("/_spanalytics") !== "" ? true : false,
     marketingpages: activeRoute("/_spmarketing") !== "" ? true : false,
     performancepages: activeRoute("/_spperformance") !== "" ? true : false,

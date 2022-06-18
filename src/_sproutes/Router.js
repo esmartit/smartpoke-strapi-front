@@ -49,8 +49,9 @@ var ThemeRoutes = [
   {
     path: "/home",
     name: "HOME",
-    icon: "home",
     state: "homepage",
+    icon: "home",
+    badges: "side-badge badge badge-info",
     component: Home,
   },
   {
