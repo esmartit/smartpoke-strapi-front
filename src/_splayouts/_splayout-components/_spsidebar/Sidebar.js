@@ -117,7 +117,8 @@ const Sidebar = (props) => {
 
                 return (
                   <li
-                    className={activeRoute(prop.path) + " sidebar-item"}
+                    className={activeRoute(prop.path) + " sidebar-item "}
+                    style={{display:prop.style}}
                     key={key}
                   >
                     <span
@@ -127,7 +128,7 @@ const Sidebar = (props) => {
                       onClick={() => setState(firstdd)}
                     >
                       <FeatherIcon icon={prop.icon} />
-                      {/* <i className={prop.icon} /> */}
+                      <i className={prop.icon} />
                       <span className="hide-menu">{prop.name}</span>
                     </span>
                     <Collapse isOpen={state[prop.state]}>

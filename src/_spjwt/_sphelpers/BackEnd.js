@@ -1,18 +1,23 @@
 import jwtService from "../../_spservices/_spauthentication/jwt.service";
+import { AuthenticationService } from "../_spservices/Authentication.service";
 
 export function ConfigureBackend() {
     let realFetch = window.fetch;
-    let user = {};
+    const currentUser = AuthenticationService.currentUserValue;
+
+    let user = '';
     window.fetch = function (url, opts) {
-      const isLoggedIn =
-        opts.headers["Authorization"] === "Bearer fake-jwt-token";
+      // const isLoggedIn =
+      //   opts.headers["Authorization"] === `Bearer ${currentUser.token}`;
+      const isLoggedIn = currentUser.token;
   
         jwtService.getJWT(opts.body)
         .then((response) => {
           user = response.data;
         })
         .catch((error) => {
-          user = '';
+          user = ''
+          console.log(error.response);
         });
   
         return new Promise((resolve, reject) => {
@@ -36,7 +41,6 @@ export function ConfigureBackend() {
           }
   
           // pass through any requests not handled above
-          if (!user) return error("Username or password is incorrect");
           realFetch(url, opts).then((response) => resolve(response));
   
           // private helper functions
