@@ -9,7 +9,7 @@ export function ConfigureBackend() {
     window.fetch = function (url, opts) {
       // const isLoggedIn =
       //   opts.headers["Authorization"] === `Bearer ${currentUser.token}`;
-      const isLoggedIn = currentUser.token;
+      let isLoggedIn = currentUser ? currentUser.token : false;
   
         jwtService.getJWT(opts.body)
         .then((response) => {
