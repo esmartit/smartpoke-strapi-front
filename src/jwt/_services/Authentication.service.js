@@ -15,14 +15,14 @@ export const AuthenticationService = {
   },
 };
 
-function login(username, password) {
+function login(identifier, password) {
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username, password }),
+    body: JSON.stringify({ identifier, password }),
   };
 
-  return fetch(`/users/authenticate`, requestOptions)
+  return fetch(`/api/auth/local`, requestOptions)
     .then(HandleResponse)
     .then((user) => {
       // store user details and jwt token in local storage to keep user logged in between page refreshes

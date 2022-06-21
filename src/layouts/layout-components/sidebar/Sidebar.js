@@ -5,23 +5,27 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import { useSelector } from "react-redux";
 import FeatherIcon from "feather-icons-react";
 
-import profile from "../../../assets/images/users/5.jpg";
+import profile from "../../../assets/images/users/esmartit.jpg";
+import { AuthenticationService } from "../../../jwt/_services";
 
 const Sidebar = (props) => {
   const activeRoute = (routeName) => {
     return props.location.pathname.indexOf(routeName) > -1 ? "selected" : "";
   };
   const [state, setState] = useState({
+    homepage: activeRoute("/home") !== "" ? true : false,
+    analyticpages: activeRoute("/analytics") !== "" ? true : false,
+    marketingpages: activeRoute("/marketing") !== "" ? true : false,
+    performancepages: activeRoute("/performance") !== "" ? true : false,
+    configurationpages: activeRoute("/configurations") !== "" ? true : false,
+    settingpages: activeRoute("/settings") !== "" ? true : false,
     authentication: activeRoute("/authentication") !== "" ? true : false,
-    uicomponents: activeRoute("/ui-components") !== "" ? true : false,
-    samplepages: activeRoute("/sample-pages") !== "" ? true : false,
-    dashboardpages: activeRoute("/dashboards") !== "" ? true : false,
-    iconsPages: activeRoute("/icons") !== "" ? true : false,
-    formlayoutPages: activeRoute("/form-layouts") !== "" ? true : false,
-    formpickerPages: activeRoute("/form-pickers") !== "" ? true : false,
+    maintenancepages: activeRoute("/maintenance") !== "" ? true : false,
   });
   const [cstate, csetState] = useState({
-    extrapages: activeRoute("/sample-pages/extra-pages") !== "" ? true : false,
+    bigdatapages: activeRoute("/settings/bigdata") !== "" ? true : false,
+    hotspotpages: activeRoute("/settings/hotspot") !== "" ? true : false,
+    locationpages: activeRoute("/maintenance/locations") !== "" ? true : false,
   });
   const settings = useSelector((state) => state.settings);
 
@@ -72,31 +76,22 @@ const Sidebar = (props) => {
                 aria-expanded="false"
               >
                 <img src={profile} alt="user" />
-                <span className="hide-menu">Steave Jobs </span>
+                <span className="hide-menu">SmartPoke User </span>
               </span>
               <Collapse isOpen={state.collapse}>
                 <ul>
                   <li>
                     <a
-                      href="/sample-pages/profile"
+                      href="/profile/profile"
                       className="sidebar-link p-0"
                     >
                       My Profile
                     </a>
                   </li>
                   <li>
-                    <a href="/calendar" className="sidebar-link p-0">
-                      My Balance
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/email" className="sidebar-link p-0">
-                      Inbox
-                    </a>
-                  </li>
-                  <li>
                     <a
-                      href="/authentication/login"
+                      href="/authentication/Login"
+                      onClick={()=>AuthenticationService.logout()}
                       className="sidebar-link p-0"
                     >
                       Logout
@@ -124,7 +119,8 @@ const Sidebar = (props) => {
 
                 return (
                   <li
-                    className={activeRoute(prop.path) + " sidebar-item"}
+                    className={activeRoute(prop.path) + " sidebar-item "}
+                    style={{display:prop.style}}
                     key={key}
                   >
                     <span
@@ -134,7 +130,7 @@ const Sidebar = (props) => {
                       onClick={() => setState(firstdd)}
                     >
                       <FeatherIcon icon={prop.icon} />
-                      {/* <i className={prop.icon} /> */}
+                      <i className={prop.icon} />
                       <span className="hide-menu">{prop.name}</span>
                     </span>
                     <Collapse isOpen={state[prop.state]}>
@@ -242,7 +238,7 @@ const Sidebar = (props) => {
                       activeClassName="active"
                     >
                       <FeatherIcon icon={prop.icon} />
-                      {/* <i className={prop.icon} /> */}
+                      <i className={prop.icon} />
                       <span className="hide-menu">{prop.name}</span>
                     </NavLink>
                   </li>
