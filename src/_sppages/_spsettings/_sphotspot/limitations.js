@@ -34,12 +34,7 @@ function LimitationTable() {
   const [noPeriod, setNoPeriod] = useState(true);
   const [noSession, setNoSession] = useState(true);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "Error occured while trying to request limitations. Network error!",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
 
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -71,6 +66,11 @@ function LimitationTable() {
         setLimitationList(response.data._embedded.limitationEntities);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request limitations, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };

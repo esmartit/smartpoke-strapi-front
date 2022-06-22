@@ -35,12 +35,7 @@ function SensorTable() {
   const [data, setData] = useState([]);
   const [sensorList, setSensorList] = useState([]);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "An error occured while trying to request sensors.",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
 
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -79,6 +74,11 @@ function SensorTable() {
         setSpotList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request spots, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };
@@ -90,6 +90,11 @@ function SensorTable() {
         setSensorList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request sensors, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };

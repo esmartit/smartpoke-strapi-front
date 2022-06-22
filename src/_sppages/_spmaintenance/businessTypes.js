@@ -23,12 +23,7 @@ function BusinessTable() {
   const [businessTypeList, setBusinessTypeList] = useState([]);
   const [noSpot, setNoSpot] = useState(false);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "An error occured while trying to request business types",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
 
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -60,6 +55,11 @@ function BusinessTable() {
         setBusinessTypeList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request business types, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };

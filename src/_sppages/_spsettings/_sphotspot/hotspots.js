@@ -33,12 +33,7 @@ function HotSpotTable() {
   const [noCustomer, setNoCustomer] = useState(false);
 
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "An error occured while trying to request hotspots.",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
 
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -75,6 +70,11 @@ function HotSpotTable() {
         setSpotList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request spots, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };
@@ -86,6 +86,11 @@ function HotSpotTable() {
         setHotSpotList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request hotpots, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };

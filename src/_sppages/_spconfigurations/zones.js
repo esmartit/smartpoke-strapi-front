@@ -29,12 +29,7 @@ function ZoneTable() {
   const [zoneList, setZoneList] = useState([]);
   const [noSensor, setNoSensor] = useState(false);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "An error occured while trying to request zones.",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
   
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -67,6 +62,11 @@ function ZoneTable() {
         setSpotList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request spots, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };
@@ -78,6 +78,11 @@ function ZoneTable() {
         setZoneList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request zones, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };

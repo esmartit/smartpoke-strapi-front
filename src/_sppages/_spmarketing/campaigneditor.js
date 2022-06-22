@@ -86,12 +86,7 @@ export default TableCampaign;
 //     });
 //   };
 
-//   const [alertMsg, setAlertMsg] = useState({
-//     color: "danger",
-//     text: "text-danger",
-//     icon: "fas fa-ban",
-//     msg: "And error occured while trying to request campaigns",
-//   });
+//   const [alertMsg, setAlertMsg] = useState({});
 
 //   // For Dismiss Button with Alert
 //   const [visible, setVisible] = useState(true);
@@ -137,6 +132,11 @@ export default TableCampaign;
 //         setCampaignList(response.data.data);
 //       })
 //       .catch((error) => {
+//         setAlertMsg({
+//         color: "danger", 
+//         text: "text-danger", 
+//         icon: "fas fa-ban", 
+//         msg: "An error occured while trying to request campaigns, ("+error.response.statusText+")."});
 //         setVisible(true);
 //       });
 //   };

@@ -29,12 +29,7 @@ function DeviceTable() {
   const [data, setData] = useState([]);
   const [deviceList, setDeviceList] = useState([]);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "An error occured while trying to request devices.",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
   
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -67,6 +62,11 @@ function DeviceTable() {
         setSpotList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request spots, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };
@@ -77,7 +77,12 @@ function DeviceTable() {
       .then((response) => {
         setDeviceList(response.data.data);
       })
-      .catch((err) => {
+      .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request devices, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };

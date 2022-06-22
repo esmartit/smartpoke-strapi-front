@@ -39,12 +39,7 @@ function SpotTable() {
   const [noSensor, setNoSensor] = useState(false);
   const [noHotSpot, setNoHotSpot] = useState(false);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "An error occured while trying to request spots.",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
 
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -85,6 +80,11 @@ function SpotTable() {
         setBusinessTypeList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request business types, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };
@@ -96,6 +96,11 @@ function SpotTable() {
         setCountryList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request countries, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };
@@ -107,6 +112,11 @@ function SpotTable() {
         setSpotList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request spots, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };

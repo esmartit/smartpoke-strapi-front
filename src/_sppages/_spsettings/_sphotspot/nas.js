@@ -27,12 +27,7 @@ function NasTable() {
   const [data, setData] = useState([]);
   const [nasList, setNasList] = useState([]);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "Error occured while trying to request NAS. Network error!",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
   
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -64,6 +59,11 @@ function NasTable() {
         setNasList(response.data._embedded.nas);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request Nas, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };

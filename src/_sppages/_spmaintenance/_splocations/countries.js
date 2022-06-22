@@ -28,12 +28,7 @@ function CountryTable() {
   const [noState, setNoState] = useState(false);
   const [noSpot, setNoSpot] = useState(false);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "An error occured while trying to request countries.",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
 
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -65,6 +60,11 @@ function CountryTable() {
         setCountryList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request countries, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };
