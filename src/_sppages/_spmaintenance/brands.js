@@ -22,12 +22,7 @@ function BrandTable() {
   const [data, setData] = useState([]);
   const [brandList, setBrandList] = useState([]);
 
-  const [alertMsg, setAlertMsg] = useState({
-    color: "danger",
-    text: "text-danger",
-    icon: "fas fa-ban",
-    msg: "An error occured while trying to request brands",
-  });
+  const [alertMsg, setAlertMsg] = useState({});
 
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
@@ -59,6 +54,11 @@ function BrandTable() {
         setBrandList(response.data.data);
       })
       .catch((error) => {
+        setAlertMsg({
+          color: "danger", 
+          text: "text-danger", 
+          icon: "fas fa-ban", 
+          msg: "An error occured while trying to request brands, ("+error.response.statusText+")."});
         setVisible(true);
       });
   };
@@ -69,15 +69,13 @@ function BrandTable() {
     alertMsg.icon = "fas fa-ban";
     switch (err) {
       case 403:
-        alertMsg.msg =
-          "Brand already exist!";
+        alertMsg.msg = "Brand already exist!";
         break;
       case 500:
         alertMsg.msg = "Something wrong happens. Server Error!";
         break;
       default:
-        alertMsg.msg =
-          "An error occured while trying to request brands.";
+        alertMsg.msg = "An error occured while trying to request brands.";
         break;
     }
     setAlertMsg(alertMsg);

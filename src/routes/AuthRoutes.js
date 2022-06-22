@@ -1,4 +1,4 @@
-import {lazy } from "react"
+// import { lazy } from "react"
 import Login from "../_sppages/_spauthentication/Login";
 import Register from "../_sppages/_spauthentication/Register";
 //const Login = lazy(() => (import("../views/authentication/Login")));
