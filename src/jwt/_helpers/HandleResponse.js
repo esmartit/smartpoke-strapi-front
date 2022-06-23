@@ -10,6 +10,10 @@ export function HandleResponse(response) {
         window.location.reload(true);
       }
 
+      if (response.status === 400) {
+        return Promise.reject('Username or password is incorrect')
+      }
+
       const error = (data && data.message) || response.statusText;
       return Promise.reject(error);
     }
