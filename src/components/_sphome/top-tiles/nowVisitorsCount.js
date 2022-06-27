@@ -28,7 +28,7 @@ function NowVisitorsCount() {
       <Col ld="4">
         <div className="d-flex">
           <div className="mr-2 align-self-center">
-            <i className={"fas fa-mobile display-7 op-3 text-dark"} />
+            <i className="fas fa-mobile display-7 op-3 text-dark" />
           </div>
           <div className="align-self-center">
             <h6 className="text-dark mt-2 mb-2">Now</h6>
@@ -43,7 +43,7 @@ function NowVisitorsCount() {
     <Col ld="4">
       <div className="d-flex">
         <div className="mr-2 align-self-center">
-          <i className={"fas fa-mobile display-7 op-3 text-dark"} />
+          <i className="fas fa-mobile display-7 op-3 text-dark" />
         </div>
         <div className="align-self-center">
         <h6 className="text-dark mt-2 mb-2">Now</h6>
