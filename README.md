@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+smartpoke-strapi-cms
+
+yarn develop
+
+smartpoke-strapi-front
+
+docker build -t smartpoke-front:latest .
+
+docker run --rm -p 3000:80 -v $(pwd)/nginx/nginx-local.conf:/etc/nginx/conf.d/default.conf smartpoke-front:latest

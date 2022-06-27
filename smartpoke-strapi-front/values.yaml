@@ -84,3 +84,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+api:
+  host: http://smartpoke-strapi-smartpoke-strapi-cms

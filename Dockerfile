@@ -19,5 +19,8 @@ RUN npm run build
 # Handle Nginx
 FROM nginx
 COPY --from=builder /frontend/build /usr/share/nginx/html
-COPY --from=builder /frontend/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+COPY --from=builder /frontend/nginx/nginx-default.conf.template /etc/nginx/conf.d/default.conf.template
+COPY docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
