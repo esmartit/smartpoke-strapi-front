@@ -4,11 +4,11 @@ import { Col } from "reactstrap";
 import "./topTiles.css";
 
 function TodayVisitorsCount() {
-  const [counter, updateCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
   const [first, setFirst] = useState(true);
 
   const getCounter = () => {
-    updateCounter(1234);
+    setCounter(1234);
     setFirst(false);
   };
 

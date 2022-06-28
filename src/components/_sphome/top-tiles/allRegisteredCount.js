@@ -4,11 +4,11 @@ import { Col } from "reactstrap";
 import "./topTiles.css";
 
 function AllRegisteredCount() {
-  const [counter, updateCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
   const [first, setFirst] = useState(true);
 
   const getCounter = () => {
-    updateCounter(153);
+    setCounter(153);
     setFirst(false);
   };
 
