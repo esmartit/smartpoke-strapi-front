@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, CardBody } from 'reactstrap';
-import TopTilesVisitors from "../components/_sphome/top-tiles/topTilesVisitors";
-import TopTilesRegistered from "../components/_sphome/top-tiles/topTilesRegistered";
+import { 
+  TopTilesVisitors,
+  TopTilesRegistered,
+  TopTilesMonthlyIN,
+} from "../components/_sphome";
+
 import socketIOClient from "socket.io-client";
 
 function Home() {
@@ -22,13 +26,20 @@ function Home() {
             </CardBody>
         </Card>
         <Row>
-        <Col sm={12} lg={8}>
-          <TopTilesVisitors />
-        </Col>
-        <Col sm={12} lg={4}>
-          <TopTilesRegistered />
-        </Col>
-      </Row>
+          <Col sm={12} lg={8}>
+            <TopTilesVisitors />
+          </Col>
+          <Col sm={12} lg={4}>
+            <TopTilesRegistered />
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12} lg={4}>
+            <TopTilesMonthlyIN />
+          </Col>
+          <Col sm={12} lg={8}>
+          </Col>
+        </Row>
     </div>;
 };
 
