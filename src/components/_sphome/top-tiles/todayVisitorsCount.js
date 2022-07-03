@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col } from "reactstrap";
+import { Card, Col } from "reactstrap";
 
 import "./topTiles.css";
 
@@ -25,31 +25,41 @@ function TodayVisitorsCount() {
 
   if (!counter) {
     return (
-      <Col ld="4">
-        <div className="d-flex">
-          <div className="mr-2 align-self-center">
-            <i className={"fas fa-mobile fa-2x op-3 text-dark"} />
+      <Col lg="3">
+        <Card className="bg-secondary">
+          <div className="d-flex">
+            <div className="col-lg-12 col-md-12">
+              <div className="p-3 active w-100 text-truncate">
+                  <h6 className="text-white">
+                  <span>
+                      <i className="fas fa-mobile" /> Today
+                  </span>
+                  </h6>
+                  <h3 className="text-white m-b-0">Loading...</h3>
+              </div>
+            </div>
           </div>
-          <div className="align-self-center">
-            <h6 className="text-dark mt-2 mb-2">Today</h6>
-            <h4 className="mt-0 text-dark">Loading...</h4>
-          </div>
-        </div>
+        </Card>
       </Col>
     );
   }
 
   return (
-    <Col ld="4">
-      <div className="d-flex">
-        <div className="mr-2 align-self-center">
-          <i className={"fas fa-mobile fa-2x op-3 text-dark"} />
-        </div>
-        <div className="align-self-center">
-        <h6 className="text-dark mt-2 mb-2">Today</h6>
-          <h4 className="mt-0 text-dark">{Intl.NumberFormat().format(counter)}</h4>
-        </div>
-      </div>
+    <Col lg="3">
+        <Card className="bg-secondary">
+          <div className="d-flex">
+            <div className="col-lg-12 col-md-12">
+              <div className="p-3 active w-100 text-truncate">
+                  <h6 className="text-white">
+                  <span>
+                      <i className="fas fa-mobile" /> Today
+                  </span>
+                  </h6>
+                  <h3 className="text-white m-b-0">{Intl.NumberFormat().format(counter)}</h3>
+              </div>
+            </div>
+          </div>
+        </Card>
     </Col>
   );
 }

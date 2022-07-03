@@ -4,6 +4,9 @@ import {
   TopTilesVisitors,
   TopTilesRegistered,
   TopTilesMonthlyIN,
+  TopTilesConversionRate,
+  VisitorsWeek,
+  VisitorsTime
 } from "../components/_sphome";
 
 import socketIOClient from "socket.io-client";
@@ -38,6 +41,15 @@ function Home() {
             <TopTilesMonthlyIN />
           </Col>
           <Col sm={12} lg={8}>
+            <TopTilesConversionRate />
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12} lg={6}>
+            <VisitorsWeek />
+          </Col>
+          <Col sm={12} lg={6}>
+            <VisitorsTime />
           </Col>
         </Row>
     </div>;
