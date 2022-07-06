@@ -118,36 +118,34 @@ const VisitorByTime = () => {
   }
 
   return (
-    <div className="col-lg-12 col-md-12 col-sm-12">
-        <Card>
-            <CardBody>
-                <div className="d-flex align-items-center">
-                <div>
-                    <h4 className="card-title">Visitors By Time</h4>
-                </div>
-                <div className="ml-auto">
-                    <select className="custom-select" value={time} onChange={handleChange}>            
-                    <option value="15">Last 15 min</option>
-                    <option value="30">Last 30 min</option>
-                    <option value="60">Last hour</option>
-                    </select>
-                </div>
-                </div>
-            </CardBody>
-            <CardBody>
-                <div className="mt-4">
-                    <div className="">
-                        <Chart
-                        options={optionsVisitor}
-                        series={seriesVisitor}
-                        type="area"
-                        height="350"
-                        />
-                    </div>
-                </div>
-            </CardBody>
-        </Card>
-    </div>
+      <Card>
+          <CardBody>
+              <div className="d-flex align-items-center">
+              <div>
+                  <h4 className="card-title">Visitors By Time</h4>
+              </div>
+              <div className="ml-auto">
+                  <select className="custom-select" value={time} onChange={handleChange}>            
+                  <option value="15">Last 15 min</option>
+                  <option value="30">Last 30 min</option>
+                  <option value="60">Last hour</option>
+                  </select>
+              </div>
+              </div>
+          </CardBody>
+          <CardBody>
+              <div className="mt-4">
+                  <div className="">
+                      <Chart
+                      options={optionsVisitor}
+                      series={seriesVisitor}
+                      type="area"
+                      height="350"
+                      />
+                  </div>
+              </div>
+          </CardBody>
+      </Card>
   );
 };
 

@@ -138,36 +138,34 @@ function VisitorsByWeek() {
   }
 
   return (
-    <div className="col-lg-12 col-md-12 col-sm-12">
-      <Card>
-        <CardBody>
-          <div className="d-flex align-items-center">
-            <div>
-              <h4 className="card-title">Visitors By Week</h4>
-            </div>
-            <div className="ml-auto">
-              <select className="custom-select" value={week} onChange={handleChange}>            
-                <option value="7">Last 7 days</option>
-                <option value="14">Last 2 weeks</option>
-                <option value="21">Last 3 weeks</option>
-              </select>
-            </div>
+    <Card>
+      <CardBody>
+        <div className="d-flex align-items-center">
+          <div>
+            <h4 className="card-title">Visitors By Week</h4>
           </div>
-        </CardBody>
-        <CardBody>
-          <div className="mt-4">
-            <div className="">
-              <Chart
-                options={optionsVisitor}
-                series={seriesVisitor}
-                type="bar"
-                height="350"
-              />
-            </div>
+          <div className="ml-auto">
+            <select className="custom-select" value={week} onChange={handleChange}>            
+              <option value="7">Last 7 days</option>
+              <option value="14">Last 2 weeks</option>
+              <option value="21">Last 3 weeks</option>
+            </select>
           </div>
-        </CardBody>
-      </Card>
-    </div>
+        </div>
+      </CardBody>
+      <CardBody>
+        <div className="mt-4">
+          <div className="">
+            <Chart
+              options={optionsVisitor}
+              series={seriesVisitor}
+              type="bar"
+              height="350"
+            />
+          </div>
+        </div>
+      </CardBody>
+    </Card>
   );
 };
 
