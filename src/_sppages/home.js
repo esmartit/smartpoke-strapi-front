@@ -26,11 +26,6 @@ function Home() {
     }, []);
   
     return <div>
-        <Card>
-            <CardBody>
-                <time dateTime={response}>{response}</time>
-            </CardBody>
-        </Card>
         <Row>
           <Col sm={12} lg={8}>
             <TopTilesVisitors />
@@ -66,6 +61,11 @@ function Home() {
             <RankingGender />
           </Col>
         </Row>
+        <Card>
+            <CardBody>
+                <time dateTime={response}>{response}</time>
+            </CardBody>
+        </Card>
     </div>;
 };
 

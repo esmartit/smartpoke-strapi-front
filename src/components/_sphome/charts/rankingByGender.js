@@ -50,7 +50,7 @@ function RankingGender() {
           minAngleToShowLabel: 5,
         },
         donut: {
-          size: "70px",
+          size: "80px",
           labels: {
             show: true,
           },
@@ -95,7 +95,7 @@ function RankingGender() {
             options={optionsGender}
             series={gendersSeries}
             type="donut"
-            height="300"
+            height="320"
           />
         </div>
       </CardBody>

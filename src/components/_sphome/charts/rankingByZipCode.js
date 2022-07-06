@@ -53,7 +53,7 @@ function RankingZipCode() {
     },
     yaxis: {
         title: {
-          text: "ZipCodes",
+          text: "Zip Codes",
           color: "#8898aa",
         },
         labels: {
