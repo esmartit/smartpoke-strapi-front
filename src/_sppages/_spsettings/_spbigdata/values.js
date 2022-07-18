@@ -177,7 +177,8 @@ function ValueTable() {
       "data": {
         "valueCode": valueCode,
         "value": value,
-        "spot": spotId
+        "spot": spotId,
+        "valueKey": spotId+':'+valueCode
       }
     };
     if (!id) {

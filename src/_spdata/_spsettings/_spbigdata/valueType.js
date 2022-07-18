@@ -11,21 +11,26 @@ const valueCodes = [
     },
     {
       id: 3,
+      name: "Daily Goal Capacity",
+      code: "daily_goal_capacity",
+    },
+    {
+      id: 4,
       name: "Total Email Month",
       code: "total_email_month",
     },
     {
-      id: 4,
+      id: 5,
       name: "Total SMS Month",
       code: "total_sms_month",
     },
     {
-      id: 5,
+      id: 6,
       name: "SMS Supervisor",
       code: "mobile_sms_supervisor",
     },
     {
-      id: 6,
+      id: 7,
       name: "Unsubscribe",
       code: "unsubscribe",
     },

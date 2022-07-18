@@ -10,6 +10,10 @@ class endpointDataService {
     return await http.get(`/api/values/${id}?populate=%2A`);
   };
 
+  async getByCode(code) {
+    return await http.get(`/api/values?filters[valueCode][$eq]=${code}&populate=%2A`);
+  };
+
   async count() {
     return await http.get("/api/values/count");
   };

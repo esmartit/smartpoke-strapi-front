@@ -10,6 +10,9 @@ import {
   RankingAge,
   RankingZipCode,
   RankingGender,
+  DailyGoalVisitor,
+  DailyGoalRegistered,
+  DailyGoalCapacity,
 } from "../components/_sphome";
 
 import socketIOClient from "socket.io-client";
@@ -59,6 +62,17 @@ function Home() {
           </Col>
           <Col sm={12} lg={4}>
             <RankingGender />
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12} lg={4}>
+            <DailyGoalVisitor />
+          </Col>
+          <Col sm={12} lg={4}>
+            <DailyGoalRegistered />
+          </Col>
+          <Col sm={12} lg={4}>
+            <DailyGoalCapacity />
           </Col>
         </Row>
         <Card>
