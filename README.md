@@ -77,4 +77,4 @@ smartpoke-strapi-front
 
 docker build -t smartpoke-front:latest .
 
-docker run --rm -p 3000:80 -v $(pwd)/nginx/nginx-local.conf:/etc/nginx/conf.d/default.conf smartpoke-front:latest
+docker run -d --rm --name smartpoke-front -p 3000:80 -e API_HOST=http://host.docker.internal:1337 smartpoke-front:latest
