@@ -8,6 +8,7 @@ import {
   VisitorsWeek,
   VisitorsTime,
   TopCampaign,
+  RankingBrand,
   RankingAge,
   RankingZipCode,
   RankingGender,
@@ -59,6 +60,7 @@ function Home() {
             <TopCampaign />
           </Col>
           <Col sm={12} lg={6}>
+            <RankingBrand />
           </Col>
         </Row>
         <Row>

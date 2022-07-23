@@ -62,7 +62,10 @@ const TopCampaign = () => {
         <div className="d-md-flex align-items-center">
           <h4 className="card-title">Top Campaigns</h4>
         </div>
+      </CardBody>
+      <CardBody>
 
+        <br></br>
         <div className="d-flex no-block align-items-center mb-2">
           <span>{title[0]}</span>
           <div className="ml-auto">
@@ -71,6 +74,7 @@ const TopCampaign = () => {
         </div>
         <Progress className="mb-3" animated color="success" value={percent[0]} />
 
+        <br></br>
         <div className="d-flex no-block align-items-center mb-2">
           <span>{title[1]}</span>
           <div className="ml-auto">
@@ -79,6 +83,7 @@ const TopCampaign = () => {
         </div>
         <Progress className="mb-3" animated color="info" value={percent[1]} />
 
+        <br></br>
         <div className="d-flex no-block align-items-center mb-2">
           <span>{title[2]}</span>
           <div className="ml-auto">
@@ -87,6 +92,7 @@ const TopCampaign = () => {
         </div>
         <Progress className="mb-3" animated color="warning" value={percent[2]} />
 
+        <br></br>
         <div className="d-flex no-block align-items-center mb-2">
           <span>{title[3]}</span>
           <div className="ml-auto">
@@ -94,6 +100,7 @@ const TopCampaign = () => {
           </div>
         </div>
         <Progress className="mb-3" animated color="danger" value={percent[3]} />
+        <br></br>
       </CardBody>
     </Card>
   );

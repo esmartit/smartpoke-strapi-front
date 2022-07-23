@@ -5,6 +5,7 @@ import TopTilesConversionRate from "./top-tiles/topTilesConversionRate";
 import VisitorsWeek from "./charts/visitorsByWeek";
 import VisitorsTime from "./charts/visitorsByTime";
 import TopCampaign from "./progress/topCampaign";
+import RankingBrand from "./charts/rankingByBrand";
 import RankingAge from "./charts/rankingByAge";
 import RankingZipCode from "./charts/rankingByZipCode";
 import RankingGender from "./charts/rankingByGender";
@@ -20,6 +21,7 @@ export {
   VisitorsWeek,
   VisitorsTime,
   TopCampaign,
+  RankingBrand,
   RankingAge,
   RankingZipCode,
   RankingGender,
