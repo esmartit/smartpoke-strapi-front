@@ -7,6 +7,7 @@ import {
   TopTilesConversionRate,
   VisitorsWeek,
   VisitorsTime,
+  TopCampaign,
   RankingAge,
   RankingZipCode,
   RankingGender,
@@ -51,6 +52,13 @@ function Home() {
           </Col>
           <Col sm={12} lg={6}>
             <VisitorsTime />
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12} lg={6}>
+            <TopCampaign />
+          </Col>
+          <Col sm={12} lg={6}>
           </Col>
         </Row>
         <Row>

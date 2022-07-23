@@ -2,8 +2,8 @@ import http from "../../http-common";
 
 class endpointDataService {
 
-  async getAll() {
-    return await http.get("/api/campaigns/?populate=%2A");
+  async getAll(sort='') {
+    return await http.get(`/api/campaigns/?populate=%2A&${sort}`);
   };
 
   async getOne(id, data) {
