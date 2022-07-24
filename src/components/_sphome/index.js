@@ -12,6 +12,7 @@ import RankingGender from "./charts/rankingByGender";
 import DailyGoalVisitor from "./gauge-chart/dailyGoalVisitor";
 import DailyGoalRegistered from "./gauge-chart/dailyGoalRegistered";
 import DailyGoalCapacity from "./gauge-chart/dailyGoalCapacity";
+import SpotsMap from "./maps/spotsMap";
 
 export {
   TopTilesVisitors,
@@ -28,4 +29,5 @@ export {
   DailyGoalVisitor,
   DailyGoalRegistered,
   DailyGoalCapacity,
+  SpotsMap,
 };
