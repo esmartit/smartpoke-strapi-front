@@ -16,6 +16,7 @@ import {
   DailyGoalRegistered,
   DailyGoalCapacity,
   SpotsMap,
+  SpotsLocationMap,
 } from "../components/_sphome";
 
 import socketIOClient from "socket.io-client";
@@ -88,9 +89,10 @@ function Home() {
         </Row>
         <Row>
           <Col sm={12} lg={12}>
-            <SpotsMap />
+            <SpotsLocationMap />
           </Col>
           <Col sm={12} lg={12}>
+            <SpotsMap />
           </Col>
         </Row>
         <Card>
