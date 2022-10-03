@@ -52,7 +52,7 @@ function NowVisitorsCount() {
             <div className="p-3 active w-100 text-truncate">
                 <h6 className="text-white">
                 <span>
-                    <i className="fas fa-mobile" /> New
+                    <i className="fas fa-mobile" /> Now
                 </span>
                 </h6>
                 <h3 className="text-white m-b-0">{Intl.NumberFormat().format(counter)}</h3>
