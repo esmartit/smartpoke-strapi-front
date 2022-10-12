@@ -12,7 +12,6 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Progress,
   Row,
   Col,
 } from "reactstrap";
@@ -29,6 +28,10 @@ import logodarktext from "../../../assets/images/logo-text.png";
 import logolighttext from "../../../assets/images/logo-light-text.png";
 import profilephoto from "../../../assets/images/users/esmartit.jpg";
 import { AuthenticationService } from "../../../jwt/_services";
+import {
+  TopTilesVisitors,
+  TopTilesRegistered
+} from "../../../components/_sphome";
 
 export default () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -338,65 +341,14 @@ export default () => {
                 <i className="mdi mdi-view-grid font-18" />
               </DropdownToggle>
               <DropdownMenu>
-                <Row>
-                  {/*--------------------------------------------------------------------------------*/}
-                  {/* Progress [Item-2]                                                              */}
-                  {/*--------------------------------------------------------------------------------*/}
-                  <Col xs="12" sm="12" md="12" lg="3">
-                    <h5 className="mb-3 text-uppercase">Progress</h5>
-                    <div className="d-flex no-block align-items-center mb-2">
-                      <span>Sales</span>
-                      <div className="ml-auto">
-                        <span className="text-primary">
-                          <i className="mdi mdi-chart-areaspline" />
-                        </span>
-                      </div>
-                    </div>
-                    <Progress className="mb-3" animated value={2 * 5} />
-                    <div className="d-flex no-block align-items-center mb-2">
-                      <span>Marketing</span>
-                      <div className="ml-auto">
-                        <span className="text-success">
-                          <i className="mdi mdi-chart-line" />
-                        </span>
-                      </div>
-                    </div>
-                    <Progress
-                      className="mb-3"
-                      animated
-                      color="success"
-                      value="25"
-                    />
-                    <div className="d-flex no-block align-items-center mb-2">
-                      <span>Accouting</span>
-                      <div className="ml-auto">
-                        <span className="text-danger">
-                          <i className="mdi mdi-chart-arc" />
-                        </span>
-                      </div>
-                    </div>
-                    <Progress
-                      className="mb-3"
-                      animated
-                      color="danger"
-                      value={50}
-                    />
-                    <div className="d-flex no-block align-items-center mb-2">
-                      <span>Sales Ratio</span>
-                      <div className="ml-auto">
-                        <span className="text-warning">
-                          <i className="mdi mdi-chart-pie" />
-                        </span>
-                      </div>
-                    </div>
-                    <Progress
-                      className="mb-3"
-                      animated
-                      color="warning"
-                      value={70}
-                    />
-                  </Col>
-                </Row>
+              <Row>
+                <Col sm={12} lg={8}>
+                  <TopTilesVisitors />
+                </Col>
+                <Col sm={12} lg={4}>
+                  <TopTilesRegistered />
+                </Col>
+              </Row>
               </DropdownMenu>
             </UncontrolledDropdown>
             {/*--------------------------------------------------------------------------------*/}
