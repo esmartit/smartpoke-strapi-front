@@ -45,6 +45,7 @@ function RankingBrand() {
   useEffect(() => {
     if (first) {
       getCounter();
+      setFirst(false);
     } else {
       let i = setInterval(() => {
         getCounter();

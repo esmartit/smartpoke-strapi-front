@@ -18,6 +18,7 @@ function RankingAge() {
   useEffect(() => {
     if (first) {
       getCustomerList();
+      setFirst(false);
     } else {
       let i = setInterval(() => {
         getCustomerList();

@@ -66,7 +66,7 @@ const VisitorByTime = () => {
   ];
 
   const [data, setData] = useState([]);
-  const [time, setTime] = useState(15);
+  const [time, setTime] = useState(14);
   const [isMounted, setIsMounted] = useState(true);
 
   
@@ -126,9 +126,9 @@ const VisitorByTime = () => {
               </div>
               <div className="ml-auto">
                   <select className="custom-select" value={time} onChange={handleChange}>            
-                  <option value="15">Last 15 min</option>
-                  <option value="30">Last 30 min</option>
-                  <option value="60">Last hour</option>
+                  <option value="14">Last 15 min</option>
+                  <option value="29">Last 30 min</option>
+                  <option value="59">Last hour</option>
                   </select>
               </div>
               </div>

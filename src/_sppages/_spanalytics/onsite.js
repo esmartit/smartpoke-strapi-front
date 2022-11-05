@@ -5,9 +5,11 @@ import {
 } from 'reactstrap';
 
 import img1 from '../../assets/images/logo-icon.png';
+import CollapseComponent from './_spselectscollapse/selectonsite';
 
 const onSite = () => {
     return <div>
+        < CollapseComponent />
         <Card>
             <CardBody>
                 <div className="error-body text-center">

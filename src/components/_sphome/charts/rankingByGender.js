@@ -16,6 +16,7 @@ function RankingGender() {
   useEffect(() => {
     if (first) {
       getGenders();
+      setFirst(false);
     } else {
       let i = setInterval(() => {
         getGenders();
