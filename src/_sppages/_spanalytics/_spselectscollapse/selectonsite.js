@@ -12,6 +12,7 @@ import {
 } from 'reactstrap';
 
 import ActualHour from '../../../components/_spdashboard/_spselectscollapse/actualtime';
+import SpotLocation from '../../../components/_spdashboard/_spselectscollapse/spotlocation';
 
 const CollapseComponent = () => {
 
@@ -41,23 +42,24 @@ const CollapseComponent = () => {
                                 Select OnSite
                             </Button>
                             <Collapse isOpen={collapse}>
-                            <Row form>
-                                <Col sm={3} md={2}>
-                                    <FormGroup>
-                                        <Label for="startTime">Start Time</Label>
-                                        <Input
-                                            type="time"
-                                            name="startTime"
-                                            id="startTime"
-                                            step="1"
-                                            defaultValue="00:00:00"
-                                        />
-                                    </FormGroup>
-                                </Col>
-                                <Col sm={3} md={2}>
-                                    < ActualHour />
-                                </Col>
-                            </Row>
+                                <Row form>
+                                    <Col sm={3} md={2}>
+                                        <FormGroup>
+                                            <Label for="startTime">Start Time</Label>
+                                            <Input
+                                                type="time"
+                                                name="startTime"
+                                                id="startTime"
+                                                step="1"
+                                                defaultValue="00:00:00"
+                                            />
+                                        </FormGroup>
+                                    </Col>
+                                    <Col sm={3} md={2}>
+                                        < ActualHour />
+                                    </Col>
+                                </Row>
+                                < SpotLocation />
                             </Collapse>
                         </CardBody>
                     </Card>

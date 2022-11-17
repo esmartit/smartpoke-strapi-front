@@ -21,7 +21,7 @@ const ActualHour = () => {
         setTimeString(h.substring(h.length - 2, h.length) + ':' + m.substring(m.length - 2, m.length) + ':'+ s.substring(s.length - 2, s.length));
 
         var checksec = (Actualsecond / 1);
-        if (checksec % 1 == 0) {
+        if (checksec % 1 === 0) {
             setStrTime(timeString);
         }
     }
