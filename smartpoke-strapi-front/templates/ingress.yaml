@@ -2,6 +2,7 @@
 {{- $fullName := include "smartpoke-strapi-front.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+#  apiVersion: networking.k8s.io/v1beta1
   apiVersion: networking.k8s.io/v1
 {{- else -}}
   apiVersion: extensions/v1beta1
@@ -32,13 +33,17 @@ spec:
       http:
         paths:
           {{- range .paths }}
-          - path: {{ .path }}
-            pathType: Prefix 
-            backend:
-              service: 
+#          - path: {{ .path }}
+#            backend:
+#              serviceName: {{ $fullName }}
+#              servicePort: {{ $svcPort }}
+          - backend:
+              service:
                 name: {{ $fullName }}
-                port: 
+                port:
                   number: {{ $svcPort }}
+            path: /
+            pathType: Prefix
           {{- end }}
     {{- end }}
   {{- end }}
